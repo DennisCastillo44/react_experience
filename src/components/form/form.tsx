@@ -36,6 +36,47 @@ const Form_ = (props: FormData): any => {
                     <div className="container mt-5">
                         <h4 className="text-center">Formulario</h4>
                     </div>
+                    <div className="col-8 m-auto">
+                        <div className="row">
+                            <div className="form-group col-4">
+                                <label htmlFor="FirstName" className="label-control">Nombre(s)</label>
+                                <Field 
+                                    className='form-control'
+                                    name='FirstName'
+                                    placeholder=''
+                                    type='text'
+                                ></Field>
+                                <ErrorMessage
+                                    name='FirstName'
+                                    component='div'
+                                    className='field-error text-danger'
+                                />
+                            </div>
+                            <div className="form-group col-4">
+                                <label htmlFor="LastName" className="label-control">Apellido paterno</label>
+                                <Field 
+                                    className='form-control'
+                                    name='LastName'
+                                    placeholder=''
+                                    type='text'
+                                ></Field>
+                                <ErrorMessage
+                                    name='LastName'
+                                    component='div'
+                                    className='field-error text-danger'
+                                />
+                            </div>
+                            <div className="form-group col-4">
+                                <label htmlFor="MotherLastName" className="label-control">Apellido materno</label>
+                                <Field 
+                                    className='form-control'
+                                    name='MotherLastName'
+                                    placeholder=''
+                                    type='text'
+                                ></Field>
+                            </div>
+                        </div>
+                    </div>
                 </Form>
             </Formik>
         </>
