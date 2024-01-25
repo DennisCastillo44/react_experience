@@ -3,9 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Routes, BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index_ from './components/main';
+import ApiComponent from './components/apiComponent';
 
 const Main = lazy(() => import("./components/main"));
 const Basic = lazy(() => import("./components/basicComponent"));
+const ApiExample = lazy(() => import("./components/apiComponent"));
 
 const routes = createBrowserRouter([
   {
@@ -14,7 +16,11 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "basic-component",
-        element: <Suspense><Basic></Basic></Suspense> //Basic
+        element: <Suspense fallback="Cargando..."><Basic></Basic></Suspense> //Basic
+      },
+      {
+        path: "api-example",
+        element: <Suspense fallback="Cargando..."><ApiExample></ApiExample></Suspense> //Api
       }
     ]
   }
@@ -23,11 +29,7 @@ const routes = createBrowserRouter([
 function App() {
 
   return (
-    <>
-      <React.StrictMode>
-        <RouterProvider router={routes}></RouterProvider>
-      </React.StrictMode>
-    </>
+      <RouterProvider router={routes}></RouterProvider>
   );
 }
 

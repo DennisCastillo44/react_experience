@@ -4,6 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const Index_ = (): any => {
 
+    console.log("render main");
     return(
         <>
             <div className="col-12 text-center mt-4">
@@ -16,7 +17,7 @@ const Index_ = (): any => {
                         <Link to="basic-component" className="link-css">Componente básico (formulario)</Link>
                     </div>
                     <div className="col-3">
-                        <Link to={"/api-component"} className="link-css">Consumo de API</Link>
+                        <Link to={"/api-example"} className="link-css">Consumo de API</Link>
                     </div>
                     <div className="col-3">
                         <Link to={"/crud-component"} className="link-css">Crud</Link>
@@ -28,4 +29,4 @@ const Index_ = (): any => {
     )
 }
 
-export default Index_
+export default Index_;
